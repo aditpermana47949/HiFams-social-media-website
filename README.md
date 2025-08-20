@@ -15,7 +15,7 @@ Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah di 
 ### 1. Clone Repositori
 
 ```bash
-git clone [https://github.com/aditpermana47949/HiFams-social-media-website.git](https://github.com/aditpermana47949/HiFams-social-media-website.git)
+git clone https://github.com/aditpermana47949/HiFams-social-media-website.git
 cd HiFams-social-media-website
 ````
 
