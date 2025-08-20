@@ -1,0 +1,78 @@
+/* Mengatur latar belakang dan teks halaman */
+body {
+  background-color: #121212; /* Warna latar belakang gelap */
+  color: #e0e0e0; /* Warna teks terang */
+  font-family: "Courier New", Courier, monospace; /* Font yang mirip dengan teks console */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Mengatur tinggi halaman agar isi berada di tengah */
+}
+
+/* Gaya untuk container formulir */
+.container {
+  background-color: #1e1e1e; /* Warna latar belakang formulir */
+  border: 1px solid #333; /* Border formulir */
+  padding: 20px;
+  border-radius: 8px; /* Membulatkan sudut border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan pada formulir */
+  max-width: 400px; /* Maksimal lebar formulir */
+  width: 100%;
+}
+
+/* Gaya untuk formulir login */
+form {
+  margin: 0; /* Menghapus margin default */
+}
+
+/* Gaya untuk label dan input */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #00ff00; /* Warna teks label hijau terang */
+}
+
+input {
+  background-color: #333; /* Warna latar belakang input */
+  color: #e0e0e0; /* Warna teks input */
+  border: 1px solid #555; /* Border input */
+  padding: 10px;
+  width: calc(100% - 22px); /* Menyesuaikan lebar input */
+  margin-bottom: 15px;
+  border-radius: 4px; /* Membulatkan sudut border input */
+}
+
+button {
+  background-color: #333; /* Warna latar belakang tombol */
+  color: #e0e0e0; /* Warna teks tombol */
+  border: 1px solid #555; /* Border tombol */
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px; /* Membulatkan sudut border tombol */
+}
+
+button:hover {
+  background-color: #444; /* Warna latar belakang tombol saat hover */
+}
+
+/* Gaya untuk tautan */
+a.create-account {
+  display: block;
+  background-color: #333; /* Warna latar belakang tombol */
+  color: #00ff00; /* Warna teks tombol */
+  text-decoration: none; /* Menghapus garis bawah pada teks */
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #555; /* Border tombol */
+  border-radius: 4px; /* Membulatkan sudut border tombol */
+  margin-top: 15px;
+  font-size: 14px;
+  transition: background-color 0.3s; /* Efek transisi pada background color */
+}
+
+a.create-account:hover {
+  background-color: #444; /* Warna latar belakang tombol saat hover */
+}

@@ -1,0 +1,129 @@
+/* Mengatur latar belakang dan teks halaman */
+body {
+  background-color: #121212; /* Warna latar belakang gelap */
+  color: #e0e0e0; /* Warna teks terang */
+  font-family: "Courier New", Courier, monospace; /* Font mirip teks console */
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya untuk header */
+header {
+  background-color: #1e1e1e;
+  color: #00ff00; /* Warna teks header hijau terang */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk konten utama */
+main {
+  display: flex;
+  padding: 20px;
+}
+
+#profile_box {
+  flex: 1;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#content {
+  display: flex;
+  flex: 3;
+  gap: 20px;
+}
+
+#timeline {
+  flex: 3;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  height: 500px; /* Menyesuaikan tinggi timeline */
+}
+
+#friendlist {
+  flex: 1;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gaya untuk postingan */
+.post {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #2e2e2e;
+  border-radius: 4px;
+}
+
+.post a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+#commentSection {
+  background-color: #2a2a2a; /* Warna latar belakang section komentar */
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#commentSection form {
+  display: flex;
+  flex-direction: column;
+}
+
+#commentSection textarea {
+  background-color: #333; /* Warna latar belakang textarea komentar */
+  color: #e0e0e0; /* Warna teks textarea komentar */
+  border: 1px solid #555; /* Border textarea komentar */
+  margin-bottom: 10px;
+}
+
+a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+button {
+  background-color: #333; /* Warna latar belakang tombol */
+  color: #e0e0e0; /* Warna teks tombol */
+  border: 1px solid #555; /* Border tombol */
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #444; /* Warna latar belakang tombol saat hover */
+}
+/* Gaya untuk footer */
+footer {
+  background-color: #1e1e1e;
+  color: #00ff00; /* Warna teks footer hijau terang */
+  padding: 10px;
+  text-align: center;
+}

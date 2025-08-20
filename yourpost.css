@@ -1,0 +1,106 @@
+/* Mengatur latar belakang dan teks halaman */
+body {
+  background-color: #121212; /* Warna latar belakang gelap */
+  color: #e0e0e0; /* Warna teks terang */
+  font-family: "Courier New", Courier, monospace; /* Font yang mirip dengan teks console */
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya untuk header */
+header {
+  background-color: #1e1e1e; /* Warna latar belakang header */
+  padding: 10px;
+  border-bottom: 1px solid #333; /* Border bawah header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk postingan */
+#post {
+  background-color: #1e1e1e; /* Warna latar belakang postingan */
+  border: 1px solid #333; /* Border postingan */
+  padding: 20px;
+  border-radius: 8px; /* Membulatkan sudut border */
+  margin: 20px;
+}
+
+#boxcomm {
+  border-bottom: 1px solid #333; /* Border bawah setiap postingan */
+  padding: 15px;
+}
+a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+/* Gaya untuk kontainer */
+#container {
+  margin: 20px;
+  display: flex;
+}
+
+/* Gaya untuk box yang menampung komentar dan like */
+#box {
+  background-color: #1e1e1e; /* Warna latar belakang box */
+  border: 1px solid #333; /* Border box */
+  padding: 10px;
+  border-radius: 8px; /* Membulatkan sudut border box */
+}
+
+#seecomment {
+  flex: 3;
+}
+
+#seelike {
+  flex: 1;
+  padding-left: 20px;
+}
+
+/* Gaya untuk komentar */
+#seecomment p {
+  margin: 10px 0;
+}
+
+/* Gaya untuk like */
+#seelike p {
+  margin: 10px 0;
+}
+
+/* Gaya untuk tautan di komentar dan like */
+#box a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+#box a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk footer */
+footer {
+  background-color: #1e1e1e; /* Warna latar belakang footer */
+  padding: 10px;
+  border-top: 1px solid #333; /* Border atas footer */
+  text-align: center;
+}
+
+footer a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,123 @@
+/* Mengatur latar belakang dan teks halaman */
+body {
+  background-color: #121212; /* Warna latar belakang gelap */
+  color: #e0e0e0; /* Warna teks terang */
+  font-family: "Courier New", Courier, monospace; /* Font yang mirip dengan teks console */
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya untuk header */
+header {
+  background-color: #1e1e1e; /* Warna latar belakang header */
+  color: #e0e0e0; /* Warna teks header */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+header a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk formulir dan area konten */
+#start_post {
+  background-color: #1e1e1e; /* Warna latar belakang area konten */
+  border: 1px solid #333; /* Border dengan warna yang kontras */
+  padding: 15px;
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+#posts {
+  flex: 3;
+  background-color: #1e1e1e; /* Warna latar belakang area konten */
+  border: 1px solid #333; /* Border dengan warna yang kontras */
+  padding: 15px;
+  margin: 10px;
+}
+
+#friends {
+  flex: 1;
+  background-color: #1e1e1e; /* Warna latar belakang area konten */
+  border: 1px solid #333; /* Border dengan warna yang kontras */
+  padding: 15px;
+  margin: 10px;
+}
+
+textarea {
+  background-color: #333; /* Warna latar belakang textarea */
+  color: #e0e0e0; /* Warna teks textarea */
+  border: 1px solid #555; /* Border textarea */
+  padding: 10px;
+  width: calc(100% - 22px); /* Menyesuaikan lebar textarea */
+}
+
+button {
+  background-color: #333; /* Warna latar belakang tombol */
+  color: #e0e0e0; /* Warna teks tombol */
+  border: 1px solid #555; /* Border tombol */
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #444; /* Warna latar belakang tombol saat hover */
+}
+
+/* Gaya untuk div yang menampilkan postingan */
+#posts div {
+  border-bottom: 1px solid #333; /* Border bawah setiap postingan */
+  padding: 10px 0;
+}
+
+#posts p {
+  margin: 5px 0;
+}
+
+a {
+  color: #00ff00; /* Warna link hijau terang */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk section komentar */
+#commentSection {
+  background-color: #2a2a2a; /* Warna latar belakang section komentar */
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#commentSection form {
+  display: flex;
+  flex-direction: column;
+}
+
+#commentSection textarea {
+  background-color: #333; /* Warna latar belakang textarea komentar */
+  color: #e0e0e0; /* Warna teks textarea komentar */
+  border: 1px solid #555; /* Border textarea komentar */
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #1e1e1e;
+  color: #00ff00; /* Warna teks footer hijau terang */
+  padding: 10px;
+  text-align: center;
+}
