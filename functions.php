@@ -4,7 +4,7 @@
         global $conn;
         $q = "SELECT * FROM user WHERE username = '$username'";
         $r = mysqli_query($conn, $q);
-        return mysqli_num_rows($r) === 0; // Jika username tidak ada, return true
+        return mysqli_num_rows($r) === 0;
     }
     
     function encryptData($data, $key) {
@@ -55,8 +55,7 @@
                   AND f2.user2_id = $userA
               )";
         $r = mysqli_query($conn, $q);
-    
-        // Memeriksa hasil query
+
         if ($r && mysqli_num_rows($r) > 0) {
             return true;
         } else {
