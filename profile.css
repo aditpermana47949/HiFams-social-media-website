@@ -1,16 +1,14 @@
-/* Mengatur latar belakang dan teks halaman */
 body {
-  background-color: #121212; /* Warna latar belakang gelap */
-  color: #e0e0e0; /* Warna teks terang */
-  font-family: "Courier New", Courier, monospace; /* Font mirip teks console */
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
 }
 
-/* Gaya untuk header */
 header {
   background-color: #1e1e1e;
-  color: #00ff00; /* Warna teks header hijau terang */
+  color: #00ff00;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -18,7 +16,7 @@ header {
 }
 
 header a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
   margin-left: 10px;
 }
@@ -27,7 +25,6 @@ header a:hover {
   text-decoration: underline;
 }
 
-/* Gaya untuk konten utama */
 main {
   display: flex;
   padding: 20px;
@@ -56,7 +53,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
-  height: 500px; /* Menyesuaikan tinggi timeline */
+  height: 500px;
 }
 
 #friendlist {
@@ -68,7 +65,6 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Gaya untuk postingan */
 .post {
   margin-bottom: 20px;
   padding: 10px;
@@ -77,7 +73,7 @@ main {
 }
 
 .post a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
 }
 
@@ -86,7 +82,7 @@ main {
 }
 
 #commentSection {
-  background-color: #2a2a2a; /* Warna latar belakang section komentar */
+  background-color: #2a2a2a;
   padding: 10px;
   margin-top: 10px;
 }
@@ -97,33 +93,33 @@ main {
 }
 
 #commentSection textarea {
-  background-color: #333; /* Warna latar belakang textarea komentar */
-  color: #e0e0e0; /* Warna teks textarea komentar */
-  border: 1px solid #555; /* Border textarea komentar */
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
   margin-bottom: 10px;
 }
 
 a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
 }
 
 button {
-  background-color: #333; /* Warna latar belakang tombol */
-  color: #e0e0e0; /* Warna teks tombol */
-  border: 1px solid #555; /* Border tombol */
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
   padding: 10px;
   cursor: pointer;
   font-size: 14px;
 }
 
 button:hover {
-  background-color: #444; /* Warna latar belakang tombol saat hover */
+  background-color: #444;
 }
-/* Gaya untuk footer */
+
 footer {
   background-color: #1e1e1e;
-  color: #00ff00; /* Warna teks footer hijau terang */
+  color: #00ff00;
   padding: 10px;
   text-align: center;
 }
