@@ -1,11 +1,10 @@
 <?php
 session_start();
-require "functions.php"; // Pastikan file ini menghubungkan ke database
+require "functions.php";
 require "key.php";
 
 $id = $_SESSION["id"];
 
-// Menampilkan postingan terbaru dari user yang diikuti
 $q = "SELECT * FROM friendship f1 
       WHERE f1.user1_id = $id 
       AND EXISTS (
@@ -27,7 +26,6 @@ $od = $rd->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiFams</title>
     <style>
-        /* Kolom komentar awalnya tersembunyi */
         .commentSection {
             display: none;
         }
@@ -37,9 +35,9 @@ $od = $rd->fetch_assoc();
         function showComments(postId) {
             var sections = document.getElementsByClassName('commentSection');
             for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none'; // Sembunyikan semua komentar
+                sections[i].style.display = 'none';
             }
-            document.getElementById('commentSection-' + postId).style.display = 'block'; // Tampilkan komentar yang sesuai
+            document.getElementById('commentSection-' + postId).style.display = 'block';
         }
     </script>
 </head>
@@ -54,7 +52,6 @@ $od = $rd->fetch_assoc();
             <a href="logout.php">Logout</a>
         </div>
     </header>
-    <!-- Formulir untuk membuat postingan -->
     <div id="start_post">
         <form action="posts.php?q=<?php echo htmlspecialchars($id); ?>" method="POST">
             <textarea name="content" rows="10" cols="30" placeholder="Tell everyone about anything"></textarea>
@@ -63,7 +60,6 @@ $od = $rd->fetch_assoc();
     </div>
     <br>
 
-    <!-- Menampilkan postingan terbaru dari user yang diikuti -->
     <div class="container">
         <div id="posts">
             <h2>Newest Fams Voices</h2>
@@ -73,7 +69,7 @@ $od = $rd->fetch_assoc();
                 $rc = mysqli_query($conn, $qc);
                 if ($rc) {
                     $oc = $rc->fetch_assoc();
-                    if ($oc) { // Periksa jika $oc tidak null
+                    if ($oc) { 
                         ?>
                         <div>
                             <a href="profile.php?q=<?php echo $oc["user_id"]; ?>">@<?php echo htmlspecialchars($od["username"]); ?></a>
@@ -82,10 +78,10 @@ $od = $rd->fetch_assoc();
                         </div>
                         <?php
                     } else {
-                        echo "<p>No posts found!</p>"; // Tampilkan pesan jika tidak ada postingan
+                        echo "<p>No posts found!</p>";
                     }
                 } else {
-                    echo "<p>Error fetching posts!</p>"; // Tampilkan pesan jika query gagal
+                    echo "<p>Error fetching posts!</p>"; 
                 }
             }
 
@@ -95,12 +91,12 @@ $od = $rd->fetch_assoc();
                 $ra = mysqli_query($conn, $qa);
                 if ($ra) {
                     $oa = $ra->fetch_assoc();
-                    if ($oa) { // Periksa jika $oa tidak null
+                    if ($oa) { 
                         $qb = "SELECT * FROM user WHERE id = $s";
                         $rb = mysqli_query($conn, $qb);
                         if ($rb) {
                             $ob = $rb->fetch_assoc();
-                            if ($ob) { // Periksa jika $ob tidak null
+                            if ($ob) { 
                                 ?>
                                 <div>
                                     <?php
@@ -146,23 +142,22 @@ $od = $rd->fetch_assoc();
                                 </div>
                                 <?php
                             } else {
-                                echo "<p>User not found!</p>"; // Tampilkan pesan jika user tidak ditemukan
+                                echo "<p>User not found!</p>"; 
                             }
                         } else {
-                            echo "<p>Error fetching user!</p>"; // Tampilkan pesan jika query gagal
+                            echo "<p>Error fetching user!</p>";
                         }
                     } else {
                        
                     }
                 } else {
-                    echo "<p>Error fetching posts for user!</p>"; // Tampilkan pesan jika query gagal
+                    echo "<p>Error fetching posts for user!</p>";
                 }
             }
             ?>
         </div>
         <br>
 
-        <!-- Formulir pencarian teman -->
         <div id="friends">
             <?php
             if (isset($_POST["search"])) {
@@ -225,31 +220,25 @@ $od = $rd->fetch_assoc();
                 <button type="submit" name="search">Find a fam</button>
             </form>
             <?php
-                // Mengambil semua hubungan di mana user2_id adalah ID saat ini
+                
                 $qf = "SELECT * FROM friendship WHERE user2_id = $id";
                 $rf = mysqli_query($conn, $qf);
 
-                // Loop melalui semua hasil
                 while ($of = $rf->fetch_assoc()) {
                     $user2_id = $of["user1_id"];
                     
-                    // Mengecek apakah hubungan timbal balik ada
                     $qg = "SELECT * FROM friendship WHERE user1_id = $id AND user2_id = $user2_id";
                     $rg = mysqli_query($conn, $qg);
 
                     if (mysqli_num_rows($rg) > 0) {
-                        // Jika ada hubungan timbal balik, lanjutkan ke iterasi berikutnya
                         continue;
                     } else {
-                        // Jika tidak ada hubungan timbal balik
-                        // Ambil data user2_id
                         $qh = "SELECT * FROM user WHERE id = $user2_id";
                         $rh = mysqli_query($conn, $qh);
                         $oh = $rh->fetch_assoc();
                         $ide = $user2_id;
                         $encrypted_id_e = encryptData($ide, $key);
 
-                        // Tampilkan data
                         ?>
                         <p>Connect request</p>
                         <p>@<?php echo $oh["username"]; ?></p>
@@ -263,15 +252,12 @@ $od = $rd->fetch_assoc();
                         ?>
                         <p>Whisper received from:</p>
                         <?php
-                        // Array untuk menyimpan ID pengirim yang sudah ditampilkan
                         $displayed_senders = array();
                     
                         while ($on = $rn->fetch_assoc()) {
                             $rrid = $on["sender_id"];
                     
-                            // Cek apakah ID pengirim sudah ditampilkan sebelumnya
                             if (!in_array($rrid, $displayed_senders)) {
-                                // Jika belum, tambahkan ke array dan tampilkan
                                 $displayed_senders[] = $rrid;
                                 
                                 $qo = "SELECT * FROM user WHERE id = $rrid";
