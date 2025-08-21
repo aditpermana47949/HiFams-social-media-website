@@ -1,8 +1,7 @@
-/* Mengatur tampilan keseluruhan halaman */
 body {
-  background-color: #121212; /* Warna latar belakang gelap */
-  color: #e0e0e0; /* Warna teks terang */
-  font-family: "Courier New", Courier, monospace; /* Font yang mirip dengan teks console */
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,12 +10,11 @@ body {
   min-height: 100vh;
 }
 
-/* Mengatur gaya header */
 header {
   background-color: #1e1e1e;
-  color: #e0e0e0; /* Warna teks header */
+  color: #e0e0e0;
   width: 99%;
-  padding: 10px; /* Disesuaikan dengan padding pada header original */
+  padding: 10px;
   border-bottom: 1px solid #333;
   display: flex;
   justify-content: space-between;
@@ -24,9 +22,9 @@ header {
 }
 
 header a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
-  font-weight: normal; /* Sesuaikan dengan gaya original */
+  font-weight: normal;
   margin: 0 10px;
 }
 
@@ -34,26 +32,24 @@ header a:hover {
   text-decoration: underline;
 }
 
-/* Mengatur container utama */
 #container {
   display: flex;
   justify-content: space-between;
   width: 80%;
   max-width: 1200px;
   margin: 20px auto;
-  padding: 20px; /* Sesuaikan dengan margin dan padding pada elemen lainnya */
+  padding: 20px;
   background-color: #1e1e1e;
-  border: 1px solid #333; /* Sesuaikan dengan gaya border original */
-  margin: 10px; /* Sesuaikan dengan margin pada elemen lainnya */
-  border-radius: 8px; /* Retain rounded corners for a modern look */
+  border: 1px solid #333;
+  margin: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Gaya untuk chat box */
 #chat_box {
   width: 70%;
   padding-right: 20px;
-  border-right: 1px solid #333; /* Konsisten dengan penggunaan border pada elemen lainnya */
+  border-right: 1px solid #333;
 }
 
 h2 {
@@ -64,50 +60,50 @@ h2 {
 .chat-box {
   width: 100%;
   height: 300px;
-  background-color: #333; /* Warna latar belakang yang serupa dengan textarea original */
-  border: 1px solid #555; /* Border konsisten dengan gaya lainnya */
+  background-color: #333;
+  border: 1px solid #555;
   padding: 10px;
   overflow-y: scroll;
   border-radius: 4px;
   color: #e0e0e0;
 }
+
 a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
 }
-/* Gaya untuk input chat */
+
 .chat-input {
-  background-color: #333; /* Warna latar belakang textarea original */
+  background-color: #333;
   color: #e0e0e0;
   border: 1px solid #555;
   padding: 10px;
   margin-top: 10px;
   border-radius: 4px;
-  width: calc(100% - 22px); /* Menyesuaikan lebar input dengan style original */
+  width: calc(100% - 22px);
 }
 
 input[type="text"],
 button {
-  background-color: #333; /* Warna latar belakang tombol */
-  color: #e0e0e0; /* Warna teks tombol */
-  border: 1px solid #555; /* Border tombol */
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
   padding: 10px;
   font-size: 14px;
   border-radius: 4px;
 }
 
 button:hover {
-  background-color: #444; /* Warna latar belakang tombol saat hover */
+  background-color: #444;
 }
 
-/* Gaya untuk daftar teman */
 #friendlist {
   width: 25%;
   padding-left: 20px;
 }
 
 #friendlist a {
-  color: #00ff00; /* Warna link hijau terang */
+  color: #00ff00;
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
