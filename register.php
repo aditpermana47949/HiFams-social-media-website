@@ -2,43 +2,35 @@
 require "functions.php";
 session_start();
 
-// Aktifkan error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 if (isset($_POST["submit"])) {
-    // Koneksi ke database
-
-    // Periksa koneksi
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Ambil dan sanitasi input
     $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST["email"]));
     $username_input = $_POST["username"];
     $username_low = strtolower($username_input);
     $username = mysqli_real_escape_string($conn, htmlspecialchars($username_low));
     $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
-    // Validasi email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "<script>
             alert('Invalid email.');
             document.location.href = 'register.php';
             </script>";
-        return; // Hentikan eksekusi
+        return;
     }
 
-    // Validasi username
     if (!usernamecheck($username)) {
         echo "<script>
             alert('Username already taken.');
             window.location='register.php';
             </script>";
-        return; // Hentikan eksekusi
+        return;
     }
 
-    // Query untuk memasukkan data ke database
     $q = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
     if (mysqli_query($conn, $q)) {
         echo "<script>
@@ -46,14 +38,12 @@ if (isset($_POST["submit"])) {
             document.location.href = 'login.php';
             </script>";
     } else {
-        // Tampilkan error jika query gagal
         echo "<script>
             alert('Registration failed: " . mysqli_error($conn) . "');
             document.location.href = 'register.php';
             </script>";
     }
 
-    // Tutup koneksi database
     mysqli_close($conn);
 }
 ?>
