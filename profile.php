@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
 
     $uuid = $_SESSION["id"];
 
-    // Mengambil informasi pengguna
     $q = "SELECT * FROM user WHERE id = $id";
     $r = mysqli_query($conn, $q);
     if (!$r) {
@@ -17,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
     }
     $o = $r->fetch_assoc();
 
-    // Mengambil daftar teman
     ?>
 
     <!DOCTYPE html>
@@ -27,12 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Profile</title>
         <style>
-            /* Kolom komentar awalnya tersembunyi */
             .commentSection {
                 display: none;
             }
         </style>
-        <link rel="stylesheet" href="profile.css"> <!-- Link ke file CSS -->
+        <link rel="stylesheet" href="profile.css">
     </head>
     <body>
         <header>
@@ -139,12 +136,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
                                     </div>
                                     <script>
                                         function showComments(postId) {
-                                            // Menyembunyikan semua section komentar
                                             var sections = document.querySelectorAll('.commentSection');
                                             sections.forEach(function(section) {
                                                 section.style.display = 'none';
                                             });
-                                            // Menampilkan section komentar yang sesuai
                                             var commentSection = document.getElementById('commentSection_' + postId);
                                             if (commentSection) {
                                                 commentSection.style.display = 'block';
@@ -169,19 +164,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
                     <div id="timeline">
                         <h2>Voices</h2>
                         <?php
-                        // Query untuk mendapatkan semua postingan dari user tertentu
                         $qa = "SELECT * FROM posts WHERE user_id = $id ORDER BY datetime DESC";
                         if ($ra = mysqli_query($conn, $qa)) {
                             while ($oa = $ra->fetch_assoc()) {
                                 $p_id = $oa["id"];
                 
-                                // Query untuk menghitung jumlah likes pada postingan
                                 $qi = "SELECT COUNT(*) as likecount FROM likes WHERE posts_id = $p_id";
                                 $ri = mysqli_query($conn, $qi);
                                 $oi = $ri->fetch_assoc();
                                 $likecount = $oi["likecount"];
                 
-                                // Query untuk menghitung jumlah komentar pada postingan
                                 $qk = "SELECT COUNT(*) as commentcount FROM comments WHERE posts_id = $p_id";
                                 $rk = mysqli_query($conn, $qk);
                                 $ok = $rk->fetch_assoc();
@@ -193,7 +185,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["q"])) {
                                     <p><?php echo htmlspecialchars($oa["content"]); ?></p>
                                     <?php 
                                         $uid = $_SESSION["id"];
-                                        // Query untuk memeriksa apakah pengguna sudah menyukai postingan
                                         $qj = "SELECT * FROM likes WHERE posts_id = $p_id AND user_id = $uid";
                                         $rj = mysqli_query($conn, $qj);
                                         $liked = mysqli_num_rows($rj) > 0;
